@@ -84,9 +84,9 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 bg-white pt-24 px-6 md:hidden"
+            className="fixed inset-0 z-40 bg-white pt-28 sm:pt-32 px-6 md:hidden"
           >
-            <div className="flex flex-col space-y-6 text-center">
+            <div className="flex flex-col space-y-6 sm:space-y-8 text-center">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
