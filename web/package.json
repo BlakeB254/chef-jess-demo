@@ -1,10 +1,11 @@
 {
-  "name": "web",
+  "name": "chef-jess-demo",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev -p 8082",
     "build": "next build --webpack",
+    "build:static": "mv src/app/'(payload)' src/app/_payload_disabled && cp next.config.static.ts next.config.ts.bak && cp next.config.ts next.config.ts.original && cp next.config.static.ts next.config.ts && next build && mv next.config.ts.original next.config.ts && rm next.config.ts.bak && mv src/app/_payload_disabled src/app/'(payload)'",
     "start": "next start",
     "lint": "eslint"
   },

@@ -32,6 +32,35 @@ This is a demo website for Chef Jess, built with **Next.js 16** and **PayloadCMS
 - `web/src/payload.config.ts`: PayloadCMS configuration.
 - `web/public/assets`: Scraped images and static assets.
 
+## Deployment to Cloudflare Pages
+
+This project supports static export for deployment to Cloudflare Pages.
+
+### Option 1: Git Integration (Recommended)
+
+1. Connect your GitHub repo to Cloudflare Pages
+2. Configure build settings:
+   - **Build command**: `cd web && npm install && npm run build:static`
+   - **Build output directory**: `web/out`
+   - **Node.js version**: `20`
+
+### Option 2: Wrangler CLI
+
+```bash
+cd web
+npm install
+npm run build:static
+npx wrangler pages deploy out --project-name=chef-jess-demo
+```
+
+### Static Export Notes
+
+The `build:static` script:
+- Temporarily disables PayloadCMS routes
+- Uses `next.config.static.ts` for static HTML export
+- Outputs to `web/out/` directory
+- Restores original configuration after build
+
 ## Notes
 - The Order system currently uses mocked data for demonstration purposes in `web/src/app/order/page.tsx`. To use dynamic data, uncomment the Payload fetching logic and populate the `menu-items` collection in the Admin panel.
 - Images are located in `web/public/assets` and served via Next.js Image component.
