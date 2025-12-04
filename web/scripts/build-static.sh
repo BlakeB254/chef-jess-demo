@@ -9,22 +9,24 @@ echo "🔧 Preparing static build..."
 # Backup original files
 cp package.json package.json.backup
 cp next.config.ts next.config.ts.backup
+cp tsconfig.json tsconfig.json.backup
 
-# Move Payload routes out of the way
+# Completely remove Payload routes (not just rename - TS still finds them)
 if [ -d "src/app/(payload)" ]; then
-  mv "src/app/(payload)" "src/app/_payload_disabled"
-  echo "✓ Disabled Payload routes"
+  rm -rf "src/app/(payload)"
+  echo "✓ Removed Payload routes"
 fi
 
-# Remove payload.config.ts temporarily
+# Remove payload.config.ts
 if [ -f "src/payload.config.ts" ]; then
-  mv "src/payload.config.ts" "src/payload.config.ts.backup"
-  echo "✓ Disabled Payload config"
+  rm "src/payload.config.ts"
+  echo "✓ Removed Payload config"
 fi
 
-# Use static package.json and config
+# Use static package.json, next.config, and tsconfig
 cp package.static.json package.json
 cp next.config.static.ts next.config.ts
+cp tsconfig.static.json tsconfig.json
 
 echo "📦 Installing dependencies (without Payload)..."
 npm install
@@ -34,16 +36,5 @@ npm run build
 
 echo "✅ Static build complete! Output in ./out/"
 
-# Restore original files (for local dev)
-mv package.json.backup package.json
-mv next.config.ts.backup next.config.ts
-
-if [ -d "src/app/_payload_disabled" ]; then
-  mv "src/app/_payload_disabled" "src/app/(payload)"
-fi
-
-if [ -f "src/payload.config.ts.backup" ]; then
-  mv "src/payload.config.ts.backup" "src/payload.config.ts"
-fi
-
-echo "✓ Restored original configuration"
+# Note: On Cloudflare, we don't need to restore files since the build is ephemeral
+# But for local testing, the git repo still has the original files
