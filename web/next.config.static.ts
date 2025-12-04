@@ -20,12 +20,9 @@ const nextConfig: NextConfig = {
   // Trailing slashes for cleaner static URLs
   trailingSlash: true,
 
-  // Skip TypeScript/ESLint errors during build (optional)
+  // Skip TypeScript errors during build (optional)
   typescript: {
     ignoreBuildErrors: false,
-  },
-  eslint: {
-    ignoreDuringBuilds: false,
   },
 };
 
