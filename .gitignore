@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+.next/
+out/
+build/
+
+# Environment files
+.env
+.env.*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Debug
+.pnpm-debug.log*
+
+# TypeScript
+*.tsbuildinfo
+
+# Genkit
+.genkit/
+
+# Payload
+*.db
+media/
+
+# Misc
+*.pem
+.vercel
+coverage/

@@ -1,0 +1,42 @@
+{
+  "name": "web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 8082",
+    "build": "next build --webpack",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@payloadcms/db-sqlite": "^3.66.0",
+    "@payloadcms/next": "^3.66.0",
+    "@payloadcms/richtext-lexical": "^3.66.0",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.23.25",
+    "graphql": "^16.12.0",
+    "lucide-react": "^0.555.0",
+    "next": "16.0.7",
+    "payload": "^3.66.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "sharp": "^0.34.5",
+    "tailwind-merge": "^3.4.0"
+  },
+  "devDependencies": {
+    "@genkit-ai/google-genai": "^1.25.0",
+    "@tailwindcss/postcss": "^4",
+    "@types/data-urls": "^3.0.4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "data-urls": "^6.0.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.0.7",
+    "genkit": "^1.25.0",
+    "node-fetch": "^3.3.2",
+    "tailwindcss": "^4",
+    "tsx": "^4.21.0",
+    "typescript": "^5"
+  }
+}
