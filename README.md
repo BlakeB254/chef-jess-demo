@@ -40,7 +40,7 @@ This project supports static export for deployment to Cloudflare Pages.
 
 1. Connect your GitHub repo to Cloudflare Pages
 2. Configure build settings:
-   - **Build command**: `cd web && npm install && npm run build:static`
+   - **Build command**: `cd web && bash scripts/build-static.sh`
    - **Build output directory**: `web/out`
    - **Node.js version**: `20`
 
@@ -48,15 +48,15 @@ This project supports static export for deployment to Cloudflare Pages.
 
 ```bash
 cd web
-npm install
-npm run build:static
+bash scripts/build-static.sh
 npx wrangler pages deploy out --project-name=chef-jess-demo
 ```
 
 ### Static Export Notes
 
-The `build:static` script:
-- Temporarily disables PayloadCMS routes
+The `scripts/build-static.sh` script:
+- Uses `package.static.json` (no PayloadCMS dependencies)
+- Temporarily disables PayloadCMS routes during build
 - Uses `next.config.static.ts` for static HTML export
 - Outputs to `web/out/` directory
 - Restores original configuration after build
