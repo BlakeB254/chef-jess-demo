@@ -81,7 +81,7 @@ export default function CookingClasses() {
                {/* Sticky Image Column */}
                <div className="sticky top-32 h-[80vh] w-full rounded-2xl overflow-hidden">
                  <Image 
-                   src="/assets/a089bdb26c66.jpg" 
+                   src="/assets/culinary-experience.jpg" 
                    alt="Culinary Experience" 
                    fill 
                    className="object-cover" 
