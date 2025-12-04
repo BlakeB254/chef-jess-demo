@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar'
 import { FadeIn } from '@/components/FadeIn'
+import { LazyVideo } from '@/components/LazyVideo'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -11,16 +12,12 @@ export default function Home() {
       {/* Hero Section - Full Screen Video */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
+          <LazyVideo
+            src="/assets/hero-video.mp4"
             poster="/assets/6b60bf_1b6be86e30004dcdad38e1a76c0dd90f_mv2_d_3840.jpg"
             className="object-cover w-full h-full brightness-50 scale-105"
-          >
-            <source src="/assets/hero-video.mp4" type="video/mp4" />
-          </video>
+            priority
+          />
           {/* Overlay Gradient */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/30"></div>
         </div>
@@ -75,15 +72,11 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-7xl mx-auto">
             <FadeIn>
               <Link href="/personal-chef" className="group block relative h-[80vh] overflow-hidden rounded-3xl">
-                <video
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
+                <LazyVideo
+                  src="/assets/personal-chef-hero.mp4"
+                  poster="/assets/6b60bf_472e628fc77941f0b50a1a39a8387d6a_mv2_d_5760.jpg"
                   className="object-cover w-full h-full brightness-75 group-hover:brightness-90 transition-all duration-1000 group-hover:scale-105"
-                >
-                  <source src="/assets/personal-chef-hero.mp4" type="video/mp4" />
-                </video>
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-80"></div>
                 <div className="absolute inset-0 p-12 flex flex-col justify-end items-start text-left">
                   <div className="relative z-10 transform transition-transform duration-500 group-hover:-translate-y-4">
@@ -100,15 +93,11 @@ export default function Home() {
             <div className="flex flex-col gap-4">
               <FadeIn delay={0.1}>
                 <Link href="/cooking-classes" className="group block relative h-[45vh] overflow-hidden rounded-3xl">
-                  <video
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
+                  <LazyVideo
+                    src="/assets/cooking-class-hero.mp4"
+                    poster="/assets/6b60bf_7b5e1bcb75574254b73c62a6b3dbd07e_mv2_d_5760.jpg"
                     className="object-cover w-full h-full brightness-75 group-hover:brightness-90 transition-all duration-1000 group-hover:scale-105"
-                  >
-                    <source src="/assets/cooking-class-hero.mp4" type="video/mp4" />
-                  </video>
+                  />
                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-80"></div>
                   <div className="absolute bottom-0 left-0 p-10">
                      <h3 className="text-4xl md:text-5xl font-serif font-bold text-white mb-2">Cooking Classes</h3>
@@ -118,15 +107,11 @@ export default function Home() {
               </FadeIn>
               <FadeIn delay={0.2}>
                 <Link href="/order" className="group block relative h-[34vh] overflow-hidden rounded-3xl">
-                  <video
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
+                  <LazyVideo
+                    src="/assets/catering-hero.mp4"
+                    poster="/assets/6b60bf_92f7fe2510024194a251542c0581d23c_mv2_d_5760.jpg"
                     className="object-cover w-full h-full brightness-75 group-hover:brightness-90 transition-all duration-1000 group-hover:scale-105"
-                  >
-                    <source src="/assets/catering-hero.mp4" type="video/mp4" />
-                  </video>
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-80"></div>
                    <div className="absolute bottom-0 left-0 p-10">
                      <h3 className="text-4xl md:text-5xl font-serif font-bold text-white mb-2">Catering</h3>
